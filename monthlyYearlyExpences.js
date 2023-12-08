@@ -41,7 +41,9 @@ expenses.forEach(month => {
     for (let key in month) {
         let year = new Date(key).getFullYear();
         let monthName = new Date(key).toLocaleString('default', { month: 'long' });
+        if (month[key] <= 1000) {
         console.log(monthName + ' ' + year);
+        }
     }
 });
 
