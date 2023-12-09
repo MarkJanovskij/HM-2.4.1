@@ -26,17 +26,30 @@ let expencesExamples = [
     { yearlyExpences: [500, 1000, 90000, 80, 980, 9000, 10, 400, 3000, 250, 45000, 1200] },
     { yearlyExpences: [20, 200, 8900, 3300, 2300, 1009, 1200, 2000, 670, 900, 900, 7000] },
    ];
+   function testCalc(value) {
+    if (value > 1000) {
+      console.log("test failed");
+    } else {
+     console.log("test execution done " );
+    }
+  }
+  expencesExamples.forEach(exp => {
+    
+    exp.yearlyExpences.forEach(testCalc);
+});
 
-   
-   let sum = 0;
-   expencesExamples.forEach(expense => {
-       expense.yearlyExpences.forEach(amount => {
-           if (amount > 1000) {
-               sum += amount;
-           }
-       });
-   });
-   console.log(sum);
+
+
+
+//    let sum = 0;
+//    expencesExamples.forEach(expense => {
+//        expense.yearlyExpences.forEach(amount => {
+//            if (amount > 1000) {
+//                sum += amount;
+//            }
+//        });
+//    });
+//    console.log(sum);
 
 
 
@@ -48,3 +61,4 @@ let expencesExamples = [
 //     }
 // });
 // console.log(sum); 
+
