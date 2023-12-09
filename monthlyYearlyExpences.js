@@ -37,14 +37,30 @@ let expenses = [
     { [new Date(Date.parse('2025-12-01'))]: 7000 } // December
 ];
 
-expenses.forEach(month => {
-    for (let key in month) {
-        let year = new Date(key).getFullYear();
-        let monthName = new Date(key).toLocaleString('default', { month: 'long' });
-        if (month[key] <= 1000) {
-        console.log(monthName + ' ' + year);
-        }
-    }
-});
-
-
+// expenses.forEach(month => {
+//     for (let key in month) {
+//         let year = new Date(key).getFullYear();
+//         let monthName = new Date(key).toLocaleString('default', { month: 'long' });
+//         if (month[key] <= 1000) {
+//         console.log(monthName + ' ' + year);
+//         }
+//     }
+// });
+//expensesExamples = monthName ("January", "February" ,"March", "April", "May" ,"June" , "July", "August" ,"September", "Octobet" , "November", "December")
+let expencesExamples = [
+    { yearlyExpences: [2500, 6000, 7000, 6000, 3, 9, 700, 8000, 655, 5700, 340, 5390] },
+    { yearlyExpences: [500, 1000, 90000, 80, 980, 9000, 10, 400, 3000, 250, 45000, 1200] },
+    { yearlyExpences: [20, 200, 8900, 3300, 2300, 1009, 1200, 2000, 670, 900, 900, 7000] },
+  ];
+  
+  const months = Array.from({ length: 12 }, (item, i) => {
+    return new Date(0, i).toLocaleString('en-US', { month: 'long' });
+  });
+  
+  expencesExamples.forEach((expenses) => {
+    expenses.yearlyExpences.forEach((expense, index) => {
+      if (expense <= 1000) {
+        console.log(months[index]);
+      }
+    });
+  });
